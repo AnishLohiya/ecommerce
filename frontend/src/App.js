@@ -184,7 +184,7 @@ function App() {
           <Route
             path="/admin/dashboard"
             element={
-              isAuthenticated && user.role === "admin" ? (
+              isAuthenticated ? (
                 <Dashboard />
               ) : (
                 <Navigate to="/admin/dashboard" replace />
@@ -194,7 +194,7 @@ function App() {
           <Route
             path="/admin/products"
             element={
-              isAuthenticated && user.role === "admin" ? (
+              isAuthenticated ? (
                 <ProductList />
               ) : (
                 <Navigate to="/admin/products" replace />
@@ -204,7 +204,7 @@ function App() {
           <Route
             path="/admin/product"
             element={
-              isAuthenticated && user.role === "admin" ? (
+              isAuthenticated ? (
                 <NewProduct />
               ) : (
                 <Navigate to="/admin/product" replace />
@@ -214,7 +214,7 @@ function App() {
           <Route
             path="/admin/product/:id"
             element={
-              isAuthenticated && user.role === "admin" ? (
+              isAuthenticated ? (
                 <UpdateProduct />
               ) : (
                 <Navigate to="/admin/product/:id" replace />
@@ -224,7 +224,7 @@ function App() {
           <Route
             path="/admin/orders"
             element={
-              isAuthenticated && user.role === "admin" ? (
+              isAuthenticated ? (
                 <OrderList />
               ) : (
                 <Navigate to="/admin/orders" replace />
@@ -234,7 +234,7 @@ function App() {
           <Route
             path="/admin/order/:id"
             element={
-              isAuthenticated && user.role === "admin" ? (
+              isAuthenticated ? (
                 <ProcessOrder />
               ) : (
                 <Navigate to="/admin/order/:id" replace />
@@ -244,7 +244,7 @@ function App() {
           <Route
             path="/admin/users"
             element={
-              isAuthenticated && user.role === "admin" ? (
+              isAuthenticated ? (
                 <UserList />
               ) : (
                 <Navigate to="/admin/users" replace />
@@ -254,7 +254,7 @@ function App() {
           <Route
             path="/admin/user/:id"
             element={
-              isAuthenticated && user.role === "admin" ? (
+              isAuthenticated ? (
                 <UpdateUser />
               ) : (
                 <Navigate to="/admin/user/:id" replace />
@@ -264,7 +264,7 @@ function App() {
           <Route
             path="/admin/reviews"
             element={
-              isAuthenticated && user.role === "admin" ? (
+              isAuthenticated ? (
                 <ProductReviews />
               ) : (
                 <Navigate to="/admin/reviews" replace />
