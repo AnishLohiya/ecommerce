@@ -76,7 +76,7 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-        {isAuthenticated && user && <UserOptions user={user}/>}
+        {isAuthenticated ? <UserOptions user={user} /> : null}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About/>} />
