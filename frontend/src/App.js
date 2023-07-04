@@ -46,7 +46,6 @@ function App() {
 
   const { isAuthenticated, user } = useSelector((state) => state.user);
   const [stripeApiKey, setStripeApiKey] = useState("");
-
   async function getStripeApiKey() {
     const { data } = await axios.get("/api/v1/stripeapikey");
 
@@ -77,7 +76,7 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-        {isAuthenticated && <UserOptions user={user}/>}
+        {isAuthenticated && user && <UserOptions user={user}/>}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About/>} />
@@ -184,7 +183,7 @@ function App() {
           <Route
             path="/admin/dashboard"
             element={
-              isAuthenticated ? (
+              isAuthenticated && user.role === "admin" ? (
                 <Dashboard />
               ) : (
                 <Navigate to="/admin/dashboard" replace />
@@ -194,7 +193,7 @@ function App() {
           <Route
             path="/admin/products"
             element={
-              isAuthenticated ? (
+              isAuthenticated && user.role === "admin" ? (
                 <ProductList />
               ) : (
                 <Navigate to="/admin/products" replace />
@@ -204,7 +203,7 @@ function App() {
           <Route
             path="/admin/product"
             element={
-              isAuthenticated ? (
+              isAuthenticated && user.role === "admin" ? (
                 <NewProduct />
               ) : (
                 <Navigate to="/admin/product" replace />
@@ -214,7 +213,7 @@ function App() {
           <Route
             path="/admin/product/:id"
             element={
-              isAuthenticated ? (
+              isAuthenticated && user.role === "admin" ? (
                 <UpdateProduct />
               ) : (
                 <Navigate to="/admin/product/:id" replace />
@@ -224,7 +223,7 @@ function App() {
           <Route
             path="/admin/orders"
             element={
-              isAuthenticated ? (
+              isAuthenticated && user.role === "admin" ? (
                 <OrderList />
               ) : (
                 <Navigate to="/admin/orders" replace />
@@ -234,7 +233,7 @@ function App() {
           <Route
             path="/admin/order/:id"
             element={
-              isAuthenticated ? (
+              isAuthenticated && user.role === "admin" ? (
                 <ProcessOrder />
               ) : (
                 <Navigate to="/admin/order/:id" replace />
@@ -244,7 +243,7 @@ function App() {
           <Route
             path="/admin/users"
             element={
-              isAuthenticated ? (
+              isAuthenticated && user.role === "admin" ? (
                 <UserList />
               ) : (
                 <Navigate to="/admin/users" replace />
@@ -254,7 +253,7 @@ function App() {
           <Route
             path="/admin/user/:id"
             element={
-              isAuthenticated ? (
+              isAuthenticated && user.role === "admin" ? (
                 <UpdateUser />
               ) : (
                 <Navigate to="/admin/user/:id" replace />
@@ -264,7 +263,7 @@ function App() {
           <Route
             path="/admin/reviews"
             element={
-              isAuthenticated ? (
+              isAuthenticated && user.role === "admin" ? (
                 <ProductReviews />
               ) : (
                 <Navigate to="/admin/reviews" replace />
