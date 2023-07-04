@@ -3,6 +3,13 @@ const cloudinary = require("cloudinary");
 const dotenv = require("dotenv");
 const connectDatabase = require("./config/database");
 dotenv.config({ path: ".env" });
+const cors = require("cors");
+
+app.use(cors(
+    {
+        origin: 'https://mern-frontend-faq1.onrender.com',
+    }
+));
 
 process.on("uncaughtException", (err) => {
     console.log(`Error: ${err.message}`);

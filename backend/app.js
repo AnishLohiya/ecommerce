@@ -11,7 +11,7 @@ dotenv.config({ path: ".env" });
 
 app.use(cors(
   {
-    origin: 'https://mern-frontend-faq1.onrender.com/',
+    origin: 'https://mern-frontend-faq1.onrender.com',
   }
 ));
 
