@@ -5,8 +5,15 @@ const errorMiddleware = require("./middleware/error");
 const bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
 const dotenv = require("dotenv");
+const cors = require("cors");
 
 dotenv.config({ path: ".env" });
+
+app.use(cors(
+  {
+    origin: 'https://mern-frontend-faq1.onrender.com/',
+  }
+));
 
 app.use(express.json({ limit: '100mb' }));
 app.use(cookieParser());
