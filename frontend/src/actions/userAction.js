@@ -88,7 +88,6 @@ export const loadUser = () => async (dispatch) => {
     }
 };
 
-
 // Logout User
 export const logout = () => async (dispatch) => {
     try {
