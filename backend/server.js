@@ -5,12 +5,7 @@ const connectDatabase = require("./config/database");
 dotenv.config({ path: ".env" });
 const cors = require("cors");
 
-app.use(cors(
-    {
-        origin: 'https://mern-frontend-faq1.onrender.com',
-    }
-));
-
+app.use(cors({origin: ['https://mern-backend-dav5.onrender.com/'], credentials: true}))
 process.on("uncaughtException", (err) => {
     console.log(`Error: ${err.message}`);
     console.log(`Shutting down the server due to Uncaught Exception`);
