@@ -8,6 +8,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 
 dotenv.config({ path: ".env" });
+app.use(cors());
 
 app.use(express.json({ limit: '100mb' }));
 app.use(cookieParser());

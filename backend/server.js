@@ -6,7 +6,6 @@ dotenv.config({ path: ".env" });
 const cors = require("cors");
 
 app.use(cors({origin: ['https://ecommerce-9nzh.vercel.app/'], credentials: true}))
-app.use(cors());
 process.on("uncaughtException", (err) => {
     console.log(`Error: ${err.message}`);
     console.log(`Shutting down the server due to Uncaught Exception`);
