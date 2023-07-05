@@ -6,7 +6,7 @@ import {
 import axios from "axios";
 
 export const addItemsToCart = (id, quantity) => async (dispatch, getState) => {
-    const { data } = await axios.get(`https://mern-backend-dav5.onrender.com/api/v1/product/${id}`);
+    const { data } = await axios.get(`https://mern-backend-dav5.onrender.com/api/product/${id}`);
 
     dispatch({
         type: ADD_TO_CART,
