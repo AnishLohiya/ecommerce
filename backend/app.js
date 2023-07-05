@@ -24,10 +24,10 @@ const user = require("./routes/userRoute");
 const order = require("./routes/orderRoute");
 const payment = require("./routes/paymentRoute");
 
-app.use('https://mern-backend-dav5.onrender.com/api/', product);
-app.use('https://mern-backend-dav5.onrender.com/api/', user);
-app.use('https://mern-backend-dav5.onrender.com/api/', order);
-app.use('https://mern-backend-dav5.onrender.com/api/', payment);
+app.use('/api/', product);
+app.use('/api/', user);
+app.use('/api/', order);
+app.use('/api/', payment);
 
 app.use(errorMiddleware);
 
