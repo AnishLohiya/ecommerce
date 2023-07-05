@@ -46,7 +46,7 @@ export const login = (email, password) => async (dispatch) => {
         const config = { headers: { "Content-Type": "application/json" } };
 
         const { data } = await axios.post(
-            `/api/login`,
+            `https://mern-backend-dav5.onrender.com/api/login`,
             { email, password },
             config
         );
