@@ -9,12 +9,6 @@ const cors = require("cors");
 
 dotenv.config({ path: ".env" });
 
-app.use(cors(
-  {
-    origin: 'https://mern-frontend-faq1.onrender.com',
-  }
-));
-
 app.use(express.json({ limit: '100mb' }));
 app.use(cookieParser());
 app.use(bodyParser.json({ limit: '100mb' }));
