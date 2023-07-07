@@ -18,7 +18,7 @@ import EventIcon from "@material-ui/icons/Event";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import { useNavigate } from "react-router-dom";
 import { createOrder, clearErrors } from "../../actions/orderAction";
-import { BACKEND } from "../../constants"
+import { BACKEND, api } from "../../constants"
 
 const Payment = () => {
     const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));
@@ -58,7 +58,7 @@ const Payment = () => {
                     "Content-Type": "application/json",
                 },
             };
-            const { data } = await axios.post(
+            const { data } = await api.post(
                 `${BACKEND}/api/payment/process`,
                 paymentData,
                 config

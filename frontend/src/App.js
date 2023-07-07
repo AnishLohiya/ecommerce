@@ -41,13 +41,14 @@ import ProductReviews from './component/Admin/ProductReviews';
 import Contact from './component/layout/Contact/Contact';
 import About from './component/layout/About/About';
 import NotFound from './component/layout/NotFound/NotFound';
+import { api }from './constants';
 
 function App() {
 
   const { isAuthenticated, user } = useSelector((state) => state.user);
   const [stripeApiKey, setStripeApiKey] = useState("");
   async function getStripeApiKey() {
-    const { data } = await axios.get(`${process.env.BACKEND}/api/stripeapikey`);
+    const { data } = await api.get(`${process.env.BACKEND}/api/stripeapikey`);
 
     setStripeApiKey(data.stripeApiKey);
   }
