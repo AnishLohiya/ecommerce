@@ -271,7 +271,10 @@ function App() {
               )
             }
           />
-          <Route path="*" element={<NotFound />}
+          <Route
+          component={
+            window.location.pathname === "/process/payment" ? null : <NotFound />
+          }
         />
         </Routes>
         <Footer />
