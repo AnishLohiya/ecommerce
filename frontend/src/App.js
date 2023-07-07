@@ -47,7 +47,7 @@ function App() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
   const [stripeApiKey, setStripeApiKey] = useState("");
   async function getStripeApiKey() {
-    const { data } = await axios.get("https://mern-backend-dav5.onrender.com/api/stripeapikey");
+    const { data } = await axios.get(`${process.env.BACKEND}/api/stripeapikey`);
 
     setStripeApiKey(data.stripeApiKey);
   }

@@ -58,7 +58,7 @@ const Payment = () => {
                 },
             };
             const { data } = await axios.post(
-                "https://mern-backend-dav5.onrender.com/api/payment/process",
+                `${BACKEND}/api/payment/process`,
                 paymentData,
                 config
             );
