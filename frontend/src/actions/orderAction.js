@@ -20,7 +20,6 @@ import {
     ORDER_DETAILS_FAIL,
     CLEAR_ERRORS,
 } from "../constants/orderConstants";
-import { BACKEND } from "../constants";
 
 
 import axios from "axios";
