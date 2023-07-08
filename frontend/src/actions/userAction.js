@@ -166,7 +166,7 @@ export const resetPassword = (token, passwords) => async (dispatch) => {
         const config = { headers: { "Content-Type": "application/json" } };
 
         const { data } = await api.put(
-            `/api/password/reset/${token}`,
+            `${BACKEND}/api/password/reset/${token}`,
             passwords,
             config
         );
@@ -184,7 +184,7 @@ export const resetPassword = (token, passwords) => async (dispatch) => {
 export const getAllUsers = () => async (dispatch) => {
     try {
         dispatch({ type: ALL_USERS_REQUEST });
-        const { data } = await api.get(`/api/admin/users`);
+        const { data } = await api.get(`${BACKEND}/api/admin/users`);
 
         dispatch({ type: ALL_USERS_SUCCESS, payload: data.users });
     } catch (error) {
@@ -196,7 +196,7 @@ export const getAllUsers = () => async (dispatch) => {
 export const getUserDetails = (id) => async (dispatch) => {
     try {
         dispatch({ type: USER_DETAILS_REQUEST });
-        const { data } = await api.get(`/api/admin/user/${id}`);
+        const { data } = await api.get(`${BACKEND}/api/admin/user/${id}`);
 
         dispatch({ type: USER_DETAILS_SUCCESS, payload: data.user });
     } catch (error) {
@@ -212,7 +212,7 @@ export const updateUser = (id, userData) => async (dispatch) => {
         const config = { headers: { "Content-Type": "application/json" } };
 
         const { data } = await api.put(
-            `/api/admin/user/${id}`,
+            `${BACKEND}/api/admin/user/${id}`,
             userData,
             config
         );
@@ -231,7 +231,7 @@ export const deleteUser = (id) => async (dispatch) => {
     try {
         dispatch({ type: DELETE_USER_REQUEST });
 
-        const { data } = await api.delete(`/api/admin/user/${id}`);
+        const { data } = await api.delete(`${BACKEND}/api/admin/user/${id}`);
 
         dispatch({ type: DELETE_USER_SUCCESS, payload: data });
     } catch (error) {
